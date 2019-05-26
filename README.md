@@ -2,7 +2,17 @@
 
 The FASTEST way to build a Threat Hunting Toolkit
 
+### Requirements
+* Python 3.6 or higher
+
+### Extras
+Not required- but useful.
+
+* Maxmind GeoIP ASN / Country Databases
+
 ## Getting Started
+
+### Commandline
 ```bash
 $ export CSIRTG_TOKEN=1234..    # not required- signup at csirtg.io
 $ pip install csirtg-hunter
@@ -61,5 +71,27 @@ $ $ csirtg-hunter 52.22.149.152,1.1.1.1,google.com,hotjasmine.su
 | us | 45102 |    180.163.8.114     |   a   |     pdns     |  c.dnspod.com  |                                  |    |
 | us | 45102 |    hotjasmine.su     |   a   |  suspicious  |  47.254.89.5   | a.dnspod.com.,b.dnspod.com.,c... |    |
 +----+-------+----------------------+-------+--------------+----------------+----------------------------------+----+
+
+```
+
+## Python
+```python
+from csirtg_hunter import resolve
+from multiprocessing import Pool, cpu_count
+from pprint import pprint
+
+DATA = [
+    'google.com',
+    '1.1.1.1',
+    '8.8.8.8',
+    'csirtgadets.com'
+]
+
+THREADS = (cpu_count() * 1.5)
+pool = Pool(THREADS)
+
+
+for output in pool.imap(resolve, DATA):
+        pprint(output)
 
 ```

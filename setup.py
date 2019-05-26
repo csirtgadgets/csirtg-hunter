@@ -3,9 +3,9 @@ from setuptools import setup, find_packages
 import versioneer
 import sys
 
-if sys.version_info < (3, 5):
+if sys.version_info < (3, 6):
     print("\n")
-    print("This requires python 3.5 or higher")
+    print("This requires python 3.6 or higher")
     print("\n")
     raise SystemExit
 
