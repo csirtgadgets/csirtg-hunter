@@ -1,2 +1,3 @@
-# csirtg-hunters
-The FASTEST way to Threat Hunt
+# CSIRTG Hunting Framework
+
+The FASTEST way to build a Threat Hunting Toolkit

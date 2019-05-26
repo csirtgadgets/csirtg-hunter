@@ -1,0 +1,6 @@
+geoip2
+maxminddb
+arrow
+csirtg_indicator==2.0a24
+csirtg_dnsdb
+csirtgsdk==1.1.5
