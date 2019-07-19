@@ -4,6 +4,7 @@ def process(i):
         return
 
     i2 = i.spamhaus()
+
     if not i2:
         return
 
