@@ -49,6 +49,7 @@ setup(
         'prettytable',
         'dnspython',
         'csirtg_indicator>=3.0a1,<4.0',
+        'csirtg_dnsdb',
         'arrow',
     ],
     scripts=[],
