@@ -3,6 +3,8 @@ dist: trusty
 language: python
 python:
   - 3.6
+  - 3.7
+  - 3.8
 
 install:
   - pip install -r dev_requirements.txt
@@ -23,6 +25,6 @@ deploy:
   on:
     branch: master
     tags: true
-    condition: $TRAVIS_PYTHON_VERSION = "3.6"
+    condition: $TRAVIS_PYTHON_VERSION = "3.8"
   password:
     secure: JkjPbIVP0sXVjlu+S34FpQDSxSm0Fa/tl2FEkZEZW8+JdHk8ZZHWc5afOkG2LAiiPB/+7yEIhhnW0v3qyt543Mo5oZLq0jmwQ36W/ZJfKoxUXPCUKdrPDJCfQ1ZbdxWvdRjPSccqnugzsFj//08LosAnOSb07fnaKVDSNSe+5+EGNW7GIrXVpvafusPyTM9jegDrspHixoEbGEkWTtcSGIsFAFahKtmceAyI/gGMUnGWQtljacd/pvsVwiHxF52NXScM/oKxKcbPgpwmDL3B00JLbBPsP9yKAI80SdEM9DAyzFjNjx8jAUhojlIrpZjSW2pceg2G5Fp0fj5vJ1Y2c8Hm309f44oaa6SJRliMKfh0w86VkDDW4AtV+JHO4KBeOnFj+/jlTJn32qCjDkYcQkAOWlrnQhWmd8p2yHw1e2s1TA8NqUwe5VLxCJh1HVhLQiJQWDrUFQu7koC4TQn7apZPYnZGtfI06geuIMFE6T6mE9YLBrVSBzr/yC6vAGLkUJb8+H0DuBkBU6Ze+7mvaPEHNU9OtGyofRXNkkqJBCBVtqQuc8se8Jai2SggijLReTA99B7/4eAbL5lAtNUA6I/Q4NfF5bzaSXl3EIob+EjzriHOZwdofXMO7Xqf9lqlhq0RnkI5b3YxQtVFUR+OGwCafcdWNvU9oqDrgQsUytw=

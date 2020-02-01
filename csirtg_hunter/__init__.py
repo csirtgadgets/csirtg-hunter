@@ -24,7 +24,6 @@ logger = logging.getLogger(__name__)
 
 
 def resolve(i):
-
     plugins = load_plugins(hunters.__path__)
 
     try:
@@ -34,11 +33,11 @@ def resolve(i):
         logger.error(e)
         i = Indicator(i)
 
-    data = []
+    data = [i.__dict__()]
     for p in plugins:
         try:
             indicators = p.process(i)
-            indicators = [i.__dict__() for i in indicators]
+            indicators = [i2.__dict__() for i2 in indicators]
             data += indicators
 
         except (KeyboardInterrupt, SystemExit):
@@ -64,7 +63,7 @@ def main():  # pragma: no cover
     p = ArgumentParser(
         description=textwrap.dedent('''\
         Env Variables:
-            
+
         example usage:
             $ csirtg-hunter 52.22.149.152,1.1.1.1,google.com,hotjasmine.su
         '''),
@@ -108,7 +107,7 @@ def main():  # pragma: no cover
     n = 0
     for output in pool.imap(resolve, data):
         logger.info('results for %s' % data[n])
-        for l in FORMATS['table'](data=output, cols=COLS):
+        for l in FORMATS['table'](output, cols=COLS):
             print(l.rstrip("\n"))
         n += 1
 

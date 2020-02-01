@@ -1,11 +1,11 @@
 
 def process(i):
-    if not i.is_fqdn() or not i.is_subdomain():
+    if not i.is_fqdn or not i.is_subdomain:
         return
 
     i2 = i.copy(**{
-        'indicator': i.is_subdomain(),
-        'confidence': 0
+        'indicator': i.is_subdomain,
+        'confidence': 1
     })
     i2.fqdn_resolve()
 

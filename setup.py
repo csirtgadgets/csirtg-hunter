@@ -48,12 +48,9 @@ setup(
     install_requires=[
         'prettytable',
         'dnspython',
-        'csirtg_indicator>=2.0,<3.0',
+        'csirtg_indicator>=3.0a1,<4.0',
         'csirtg_dnsdb',
-        'csirtgsdk',
         'arrow',
-        'geoip2',
-        'maxminddb'
     ],
     scripts=[],
     entry_points={
