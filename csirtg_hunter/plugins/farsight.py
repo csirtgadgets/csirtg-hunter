@@ -61,7 +61,9 @@ def process(i, max=MAX_QUERY_RESULTS):
                 reported_at=reporttime,
                 provider=PROVIDER,
                 tlp='amber',
-                group='everyone'
+                group='everyone',
+                resolve_geo=True,
+                resolve_fqdn=True
             )
 
             yield ii

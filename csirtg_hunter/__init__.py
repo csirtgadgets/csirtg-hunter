@@ -14,8 +14,8 @@ from csirtg_indicator import Indicator
 from csirtg_indicator.constants import LOG_FORMAT
 from csirtg_indicator.format import FORMATS
 
-from csirtg_hunters import plugins as hunters
-from csirtg_hunters.utils import load_plugins, get_argument_parser
+from csirtg_hunter import plugins as hunters
+from csirtg_hunter.utils import load_plugins, get_argument_parser
 
 THREADS = os.getenv('THREADS', cpu_count() * 1.5)
 THREADS = int(THREADS)
@@ -33,11 +33,11 @@ def resolve(i):
         logger.error(e)
         i = Indicator(i)
 
-    data = []
+    data = [i.__dict__()]
     for p in plugins:
         try:
             indicators = p.process(i)
-            indicators = [i.__dict__() for i in indicators]
+            indicators = [i2.__dict__() for i2 in indicators]
             data += indicators
 
         except (KeyboardInterrupt, SystemExit):

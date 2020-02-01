@@ -22,7 +22,7 @@ def _copy(i, indicator):
         'confidence': 0,
         'ns': None,
         'mx': None,
-        'rdata': None
+        'rdata': None,
     })
 
 
@@ -85,8 +85,8 @@ def process(i):
             if not ii:
                 continue
 
-            # ii.fqdn_resolve()
-            # ii.geo_resolve()
+            ii.fqdn_resolve()
+            ii.geo_resolve()
             yield ii
 
 

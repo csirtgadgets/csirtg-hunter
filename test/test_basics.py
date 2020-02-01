@@ -1,6 +1,4 @@
-import pytest
 from csirtg_hunter import resolve
-from pprint import pprint
 
 DATA = [
     'google.com',
