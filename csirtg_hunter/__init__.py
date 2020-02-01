@@ -14,8 +14,8 @@ from csirtg_indicator import Indicator
 from csirtg_indicator.constants import LOG_FORMAT
 from csirtg_indicator.format import FORMATS
 
-from csirtg_hunter import plugins as hunters
-from csirtg_hunter.utils import load_plugins, get_argument_parser
+from csirtg_hunters import plugins as hunters
+from csirtg_hunters.utils import load_plugins, get_argument_parser
 
 THREADS = os.getenv('THREADS', cpu_count() * 1.5)
 THREADS = int(THREADS)
@@ -24,7 +24,6 @@ logger = logging.getLogger(__name__)
 
 
 def resolve(i):
-
     plugins = load_plugins(hunters.__path__)
 
     try:
@@ -64,7 +63,7 @@ def main():  # pragma: no cover
     p = ArgumentParser(
         description=textwrap.dedent('''\
         Env Variables:
-            
+
         example usage:
             $ csirtg-hunter 52.22.149.152,1.1.1.1,google.com,hotjasmine.su
         '''),
@@ -108,7 +107,7 @@ def main():  # pragma: no cover
     n = 0
     for output in pool.imap(resolve, data):
         logger.info('results for %s' % data[n])
-        for l in FORMATS['table'](data=output, cols=COLS):
+        for l in FORMATS['table'](output, cols=COLS):
             print(l.rstrip("\n"))
         n += 1
 

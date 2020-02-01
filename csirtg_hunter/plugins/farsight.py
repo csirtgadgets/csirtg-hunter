@@ -19,7 +19,7 @@ def _enabled(i):
     if not TOKEN:
         return
 
-    if not i.is_ipv4():
+    if not i.is_ipv4:
         return
 
     if i.tags and 'search' not in i.tags:

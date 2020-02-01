@@ -3,7 +3,7 @@ from urllib.parse import urlparse
 
 
 def process(i):
-    if not i.is_url():
+    if not i.is_url:
         return
 
     u = urlparse(i.indicator)

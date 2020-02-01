@@ -1,7 +1,10 @@
 
 
 def process(i):
-    if not i.is_ip():
+    if not i.is_ip:
+        return
+
+    if not i.is_ipv4:
         return
 
     if not i.tags:
