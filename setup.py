@@ -48,7 +48,7 @@ setup(
     install_requires=[
         'prettytable',
         'dnspython',
-        'csirtg_indicator==2.0a24',
+        'csirtg_indicator>=2.0,<3.0',
         'csirtg_dnsdb',
         'csirtgsdk',
         'arrow',
