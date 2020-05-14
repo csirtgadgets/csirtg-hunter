@@ -67,6 +67,9 @@ def _mx(i):
     for mx in i.get('mx', []):
         mx = re.sub(r'^\d+ ', '', mx)
         for ii in _copy(i, mx.rstrip('.')):
+            if not ii.indicator or ii.inidcator == '':
+                continue
+
             yield ii
 
 
@@ -97,7 +100,7 @@ def main():
     logger.setLevel(logging.DEBUG)
 
     from csirtg_indicator import Indicator
-    i = Indicator('csirtg.io', confidence=2, tags='phishing')
+    i = Indicator('yimg.com', confidence=2, tags='phishing')
     rv = process(i)
 
     for r in rv:
