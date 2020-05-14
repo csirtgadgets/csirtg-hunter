@@ -4,7 +4,8 @@ DATA = [
     'google.com',
     '1.1.1.1',
     '8.8.8.8',
-    'csirtgadets.com'
+    'csirtgadets.com',
+    'yimg.com'
 ]
 
 
