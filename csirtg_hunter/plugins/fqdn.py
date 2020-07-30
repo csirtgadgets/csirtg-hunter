@@ -67,7 +67,7 @@ def _mx(i):
     for mx in i.get('mx', []):
         mx = re.sub(r'^\d+ ', '', mx)
         for ii in _copy(i, mx.rstrip('.')):
-            if not ii.indicator or ii.indicator == '':
+            if not ii or not ii.indicator or ii.indicator == '':
                 continue
 
             yield ii
