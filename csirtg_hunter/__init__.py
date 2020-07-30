@@ -47,10 +47,7 @@ def resolve(i):
             if 'SERVFAIL' in str(e):
                 continue
 
-            logger.error(e)
-            if logger.getEffectiveLevel() == logging.DEBUG:
-                import traceback
-                traceback.print_exc()
+            logger.error(e, exc_info=True)
 
             continue
 
